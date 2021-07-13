@@ -2,6 +2,8 @@ import numpy as np
 import pandas as pd
 import utils
 import sys
+import os
+import pdb
 
 sys.path.append(os.path.abspath(os.path.join("libs/cidre")))
 from cidre import cidre, filters
@@ -24,8 +26,9 @@ if __name__ == "__main__":
 
     # Load the communty membership
     community_table = pd.read_csv(COMMUNITY_FILE, sep="\t")
+    #pdb.set_trace()
     community_ids = (
-        community_table.set_index("mag_journal_ids").loc[nodes, "community_id"].values
+        community_table.set_index("mag_journal_id").loc[nodes, "community_id"].values
     )
 
     # Define the filter

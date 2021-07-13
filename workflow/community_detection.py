@@ -45,10 +45,10 @@ if __name__ == "__main__":
     print("Estimating")
     states = gt.minimize_blockmodel_dl(
         G,
-        deg_corr=True,
-        state_args=dict(eweight=G.ep.weight),
-        verbose=True,
-        B_max=np.round(A.shape[0] / 3).astype(int),
+        #deg_corr=True,
+        state_args=dict(eweight=G.ep.weight, B_max=np.round(A.shape[0] / 3).astype(int)),
+        #verbose=True,
+        #B_max=np.round(A.shape[0] / 3).astype(int),
     )
 
     print("Save")
